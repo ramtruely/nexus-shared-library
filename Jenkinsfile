@@ -122,10 +122,10 @@ EOF
         sh """
           mvn -s /tmp/settings.xml deploy:deploy-file \
               -DpomFile=temp-pom.xml \
-              -Dfile=shared-lib/jenkins-shared-library-2.1.0-lib.zip \
+              -Dfile=nexus-shared-lib/jenkins-shared-library-2.1.0-lib.zip \
               -Dpackaging=zip \
               -Dclassifier=lib \
-              -DrepositoryId=nexus-repo \
+              -DrepositoryId=maven-shared-lib \
               -Durl=http://localhost:8081/repository/maven-shared-lib/
         """
       }
