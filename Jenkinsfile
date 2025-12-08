@@ -34,7 +34,7 @@ pipeline {
     stage("Create Maven Files") {
       steps {
         sh """
-          cat > shared-lib/pom.xml <<EOF
+          cat > nexus-shared-library/pom.xml <<EOF
 <project>
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.roylenferink</groupId>
@@ -71,7 +71,7 @@ EOF
         """
 
         sh """
-          cat > shared-lib/assembly.xml <<EOF
+          cat > nexus-shared-library/assembly.xml <<EOF
 <assembly
  xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3">
   <id>lib</id>
@@ -111,7 +111,7 @@ EOF
     stage("Package (ZIP)") {
       steps {
         sh """
-          cd shared-lib
+          cd nexus-shared-library
           mvn -s /tmp/settings.xml package
         """
       }
