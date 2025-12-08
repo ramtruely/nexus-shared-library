@@ -26,7 +26,7 @@ pipeline {
       steps {
         sh """
           rm -rf shared-lib
-          git clone https://github.com/ramtruely/your-shared-lib.git shared-lib
+          git clone https://github.com/ramtruely/nexus-shared-library.git
         """
       }
     }
