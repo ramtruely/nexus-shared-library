@@ -25,7 +25,7 @@ pipeline {
     stage("Clone Shared Lib Repo") {
       steps {
         sh """
-          rm -rf shared-lib
+          rm -rf nexus-shared-library
           git clone https://github.com/ramtruely/nexus-shared-library.git
         """
       }
