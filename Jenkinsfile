@@ -39,7 +39,7 @@ pipeline {
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.roylenferink</groupId>
   <artifactId>jenkins-shared-library</artifactId>
-  <version>${LIB_VERSION}</version>
+  <version>2.1.0</version>
   <packaging>pom</packaging>
 
   <build>
