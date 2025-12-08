@@ -121,14 +121,12 @@ EOF
       steps {
         sh """
           mvn -s /tmp/settings.xml deploy:deploy-file \
-            -DgroupId=com.roylenferink \
-            -DartifactId=jenkins-shared-library \
-            -Dversion=${LIB_VERSION} \
-            -Dpackaging=zip \
-            -Dclassifier=lib \
-            -Dfile=shared-lib/jenkins-shared-library-${LIB_VERSION}-lib.zip \
-            -DrepositoryId=nexus-repo \
-            -Durl=http://localhost:8081/repository/maven-shared-lib/
+              -DpomFile=temp-pom.xml \
+              -Dfile=shared-lib/jenkins-shared-library-2.1.0-lib.zip \
+              -Dpackaging=zip \
+              -Dclassifier=lib \
+              -DrepositoryId=nexus-repo \
+              -Durl=http://localhost:8081/repository/maven-shared-lib/
         """
       }
     }
