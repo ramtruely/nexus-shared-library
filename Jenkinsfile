@@ -13,8 +13,8 @@ pipeline {
     stage("Install Maven") {
       steps {
         sh """
-          mkdir -p /tools
-          cd /tools
+          mkdir -p $WORKSPACE/tools
+          cd $WORKSPACE/tools
           wget https://archive.apache.org/dist/maven/maven-3/${MAVEN_VERSION}/binaries/apache-maven-${MAVEN_VERSION}-bin.tar.gz
           tar -xzf apache-maven-${MAVEN_VERSION}-bin.tar.gz
         """
