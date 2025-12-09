@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 
+                              http://maven.apache.org/xsd/settings-1.0.0.xsd">
+  
+  <servers>
+    <server>
+      <id>maven-nexus-lib</id>
+      <username>admin</username>
+      <password>admin</password>
+    </server>
+  </servers>
+  
+  <profiles>
+    <profile>
+      <id>nexus</id>
+      <repositories>
+        <repository>
+          <id>central</id>
+          <name>Maven Central</name>
+          <url>https://repo1.maven.org/maven2</url>
+        </repository>
+        <repository>
+          <id>maven-nexus-lib</id>
+          <url>http://35.222.195.140:8081/repository/maven-nexus-lib/</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>central</id>
+          <name>Maven Central</name>
+          <url>https://repo1.maven.org/maven2</url>
+        </pluginRepository>
+        <pluginRepository>
+          <id>maven-nexus-lib</id>
+          <url>http://35.222.195.140:8081/repository/maven-nexus-lib/</url>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+  
+  <activeProfiles>
+    <activeProfile>nexus</activeProfile>
+  </activeProfiles>
+</settings>
