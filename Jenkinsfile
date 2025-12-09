@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Use Lib') {
             steps {
-                sript {
+                script {
                    build.buildApp()     
                    examplePipeline.deployApp()
               }
