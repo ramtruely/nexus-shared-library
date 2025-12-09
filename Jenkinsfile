@@ -9,8 +9,12 @@ pipeline {
     stages {
         stage('Use Lib') {
             steps {
-                examplePipeline.deployApp()
-            }
-        }
-    }
-}
+                sript {
+                   build.buildApp()     
+                   examplePipeline.deployApp()
+              }
+          }
+      }
+  }
+}        
+        
