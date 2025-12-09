@@ -3,4 +3,4 @@ def call(String name = "World") {
     echo "Build: ${env.BUILD_NUMBER} | Node: ${env.NODE_NAME}"
     return "SUCCESS-${env.BUILD_NUMBER}"
 }
-return this
+
