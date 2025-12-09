@@ -12,7 +12,7 @@ pipeline {
                 script {
                     hello("Tulasiram")
                     utils.printInfo()
-                    App("myapp", "3.1.1")  // New App function
+                    
                 }
             }
         }
