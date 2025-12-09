@@ -12,7 +12,7 @@ pipeline {
                 script {
                     hello("Tulasiram")
                     utils.printInfo()
-                    deployApp("myapp", "2.0.1")
+                    App("myapp", "2.0.1")
                 }
             }
         }
