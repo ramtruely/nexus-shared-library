@@ -10,8 +10,8 @@ pipeline {
         stage('Use Lib') {
             steps {
                 script {
-                   build.buildApp()     
-                   examplePipeline.deployApp()
+                    
+                   examplePipeline()
               }
           }
       }
