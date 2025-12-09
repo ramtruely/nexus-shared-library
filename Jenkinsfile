@@ -1,6 +1,6 @@
 library identifier: 'jenkins-shared-lib@1.0.0',
         retriever: nexus(
-          artifactDetails: 'com.example:jenkins-shared-lib:1.0.0:zip:lib',
+          artifactDetails: 'com.example:jenkins-shared-lib:1.0.0:zip',
           mavenHome: '/usr/share/maven'
         )
 
