@@ -9,7 +9,7 @@ pipeline {
     stages {
         stage('Use Lib') {
             steps {
-                examplePipeline()
+                examplePipeline.deployApp()
             }
         }
     }
