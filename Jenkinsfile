@@ -11,7 +11,7 @@ pipeline {
                 script {
                     // Test direct vars/ calls (don't need utils())
                     echo "Library loaded! Testing deploy.toEnvironment..."
-                    deploy.toEnvironment('dev', 'testapp', '1.0.0')
+                    deploy.toEnvironment('dev', 'testapp', '1.0.3')
                 }
             }
         }
