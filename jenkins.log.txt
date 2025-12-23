@@ -1,0 +1,62 @@
+Started by user Ram
+Obtained Jenkinsfile from git https://github.com/ramtruely/nexus-shared-library.git
+[Pipeline] Start of Pipeline
+[Pipeline] library
+Loading library sbc@1.1.0
+From HTTP URL: http://admin:admin123@34.46.185.122:8081/repository/maven-shared-lib/com/sbc/1.1.0/sbc-1.1.0.zip
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/http-retrieval
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/http-retrieval/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/ramtruely/nexus-shared-library.git # timeout=10
+Fetching upstream changes from https://github.com/ramtruely/nexus-shared-library.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+ > git fetch --tags --force --progress -- https://github.com/ramtruely/nexus-shared-library.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision 8b1f926bf8bc9016ed6155bfadf746278a688dcf (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 8b1f926bf8bc9016ed6155bfadf746278a688dcf # timeout=10
+Commit message: "Update Jenkinsfile"
+ > git rev-list --no-walk fdadb70d1ee80f8b0b3d7c307c4c371b0b143a87 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Test vars/utils.groovy)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] echo
+Utils loaded successfully!
+[Pipeline] echo
+🎉 UTILS LOADED!
+[Pipeline] echo
+Git helper available: null
+[Pipeline] echo
+Deploy helper available: null
+[Pipeline] echo
+Validate helper available: null
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] echo
+✅ vars/utils.groovy WORKS PERFECTLY!
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
