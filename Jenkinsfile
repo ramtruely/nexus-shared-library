@@ -9,7 +9,6 @@ pipeline {
         stage('Test Shared Lib') {
             steps {
                 script {
-                    hello("Tulasiram")
                     utils.printInfo()
                     
                 }
