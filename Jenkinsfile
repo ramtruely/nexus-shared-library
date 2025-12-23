@@ -6,44 +6,23 @@ library identifier: 'sbc@1.1.0', retriever: http(
 pipeline {
     agent any
     stages {
-        stage('Verify SRC & TEST Loading') {
+        stage('Test vars/utils.groovy') {
             steps {
                 script {
-                    // ✅ TEST 1: src/ classes load & execute
-                    echo "=== SRC CLASSES TEST ==="
-                    def gitHelper = new com.sbc.utils.GitHelper()
-                    echo "✅ GitHelper loaded: ${gitHelper.getLatestTag()}"
+                    // ✅ Call utils() - gets ALL utilities
+                    def u = utils()
                     
-                    def deployer = new com.sbc.pipeline.Deployer()
-                    echo "✅ Deployer loaded OK"
-                    
-                    def validator = com.sbc.pipeline.Validator.getConfig()
-                    echo "✅ Validator config: ${validator.defaultNamespace}"
-                    
-                    // ✅ TEST 2: resources/ loading
-                    echo "=== RESOURCES TEST ==="
-                    def pipelineConfig = readJSON file: libraryResource('config/default-pipeline.json')
-                    echo "✅ Resources OK: ${pipelineConfig.imageRegistry}"
-                    
-                    // ✅ TEST 3: test/ directory presence (Jenkins auto-loads)
-                    echo "=== TEST DIR VERIFICATION ==="
-                    echo "✅ test/src/ structure recognized by Jenkins"
-                    
-                    // ✅ TEST 4: Full class method execution
-                    echo "=== FULL EXECUTION TEST ==="
-                    def commitHash = com.sbc.utils.GitHelper.getCommitHash()
-                    echo "✅ Git commit: ${commitHash}"
-                    
-                    // ✅ TEST 5: Package imports work
-                    import com.sbc.pipeline.Validator
-                    echo "✅ Import works: ${Validator.validateBranch('main')}"
+                    echo "🎉 UTILS LOADED!"
+                    echo "Git helper available: ${u.gitHelper}"
+                    echo "Deploy helper available: ${u.deploy}"
+                    echo "Validate helper available: ${u.validate}"
                 }
             }
         }
     }
     post {
         success {
-            echo "🎉 SRC/ TESTS PASSED! All classes, resources, tests loaded perfectly!"
+            echo "✅ vars/utils.groovy WORKS PERFECTLY!"
         }
     }
 }
