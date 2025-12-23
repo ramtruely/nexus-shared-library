@@ -13,9 +13,9 @@ pipeline {
                     def u = utils()
                     
                     echo "🎉 UTILS LOADED!"
-                    echo "Git helper available: ${u.gitHelper}"
-                    echo "Deploy helper available: ${u.deploy}"
-                    echo "Validate helper available: ${u.validate}"
+                    echo "Git helper available: ${u.GitHelper}"
+                    echo "Deploy helper available: ${u.Deployer}"
+                    echo "Validate helper available: ${u.Validator}"
                 }
             }
         }
