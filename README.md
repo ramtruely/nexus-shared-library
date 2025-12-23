@@ -1,3 +1,11 @@
+--- For Nexus retrieval
+//library identifier: 'jenkins-shared-lib@3.1.1',
+        retriever: nexus(
+          artifactDetails: 'com.example:jenkins-shared-lib:3.1.1:zip',
+          mavenHome: '/usr/share/maven'
+        )
+//
+---
 # Jenkins shared library example
 
 This repository contains an example project for deploying a Jenkins shared library to Nexus.
