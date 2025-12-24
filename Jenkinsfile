@@ -9,19 +9,18 @@ pipeline {
         stage('Test vars/utils.groovy') {
             steps {
                 script {
-                    def u = utils()   // this is the map above
+                    def u = utils()
 
                     echo "🎉 UTILS LOADED!"
                     echo "Map keys: ${u.keySet()}"
 
-                    // Call the closures
                     def g = u.gitHelper()
-                    def d = u.deployer()
-                    def v = u.validator()
+                    def d = u.deploy()
+                    def v = u.validate()
 
                     echo "Git helper value: ${g}"
-                    echo "Deployer value: ${d}"
-                    echo "Validator value: ${v}"
+                    echo "Deploy helper value: ${d}"
+                    echo "Validate helper value: ${v}"
                 }
             }
         }
