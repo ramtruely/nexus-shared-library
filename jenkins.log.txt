@@ -21,6 +21,80 @@ Fetching upstream changes from https://github.com/ramtruely/nexus-shared-library
  > git --version # 'git version 2.34.1'
  > git fetch --tags --force --progress -- https://github.com/ramtruely/nexus-shared-library.git +refs/heads/*:refs/remotes/origin/* # timeout=10
  > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+Checking out Revision 466871c66446fd0ab2d54a9e4d226ad99fd4c5c3 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 466871c66446fd0ab2d54a9e4d226ad99fd4c5c3 # timeout=10
+Commit message: "Create Jenkinsfile"
+ > git rev-list --no-walk 466871c66446fd0ab2d54a9e4d226ad99fd4c5c3 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Validate vars + src + resources)
+[Pipeline] script
+[Pipeline] {
+[Pipeline] echo
+=== START INTEGRATION CHECK ===
+[Pipeline] echo
+utils.groovy: loaded
+[Pipeline] libraryResource
+[Pipeline] echo
+ConfigLoader: loaded JSON length=99
+[Pipeline] readJSON
+[Pipeline] echo
+utils.groovy: config loaded -> [appName:sbc-demo, defaultEnv:dev, imageRegistry:registry.example.com]
+[Pipeline] echo
+utils() keys: [getAppName, getDefaultEnv, getRegistry]
+[Pipeline] echo
+App name from utils: sbc-demo
+[Pipeline] echo
+Default env from utils: dev
+[Pipeline] echo
+Registry from utils: registry.example.com
+[Pipeline] echo
+=== END INTEGRATION CHECK ===
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] echo
+✅ vars + src + resources integration OK
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
+
+---
+Started by user Ram
+Obtained Jenkinsfile from git https://github.com/ramtruely/nexus-shared-library.git
+[Pipeline] Start of Pipeline
+[Pipeline] library
+Loading library sbc@1.1.0
+From HTTP URL: http://admin:admin123@34.46.185.122:8081/repository/maven-shared-lib/com/sbc/1.1.0/sbc-1.1.0.zip
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/http-retrieval
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/http-retrieval/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/ramtruely/nexus-shared-library.git # timeout=10
+Fetching upstream changes from https://github.com/ramtruely/nexus-shared-library.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.34.1'
+ > git fetch --tags --force --progress -- https://github.com/ramtruely/nexus-shared-library.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
 Checking out Revision 1bda2882278c532975b270fbe5d0a49c8d252505 (refs/remotes/origin/master)
  > git config core.sparsecheckout # timeout=10
  > git checkout -f 1bda2882278c532975b270fbe5d0a49c8d252505 # timeout=10
