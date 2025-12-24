@@ -21,11 +21,11 @@ Fetching upstream changes from https://github.com/ramtruely/nexus-shared-library
  > git --version # 'git version 2.34.1'
  > git fetch --tags --force --progress -- https://github.com/ramtruely/nexus-shared-library.git +refs/heads/*:refs/remotes/origin/* # timeout=10
  > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
-Checking out Revision 8b1f926bf8bc9016ed6155bfadf746278a688dcf (refs/remotes/origin/master)
+Checking out Revision 1bda2882278c532975b270fbe5d0a49c8d252505 (refs/remotes/origin/master)
  > git config core.sparsecheckout # timeout=10
- > git checkout -f 8b1f926bf8bc9016ed6155bfadf746278a688dcf # timeout=10
+ > git checkout -f 1bda2882278c532975b270fbe5d0a49c8d252505 # timeout=10
 Commit message: "Update Jenkinsfile"
- > git rev-list --no-walk fdadb70d1ee80f8b0b3d7c307c4c371b0b143a87 # timeout=10
+ > git rev-list --no-walk 1bda2882278c532975b270fbe5d0a49c8d252505 # timeout=10
 [Pipeline] }
 [Pipeline] // stage
 [Pipeline] withEnv
@@ -39,11 +39,19 @@ Utils loaded successfully!
 [Pipeline] echo
 🎉 UTILS LOADED!
 [Pipeline] echo
-Git helper available: null
+Map keys: [gitHelper, deploy, validate]
 [Pipeline] echo
-Deploy helper available: null
+utils.gitHelper() called
 [Pipeline] echo
-Validate helper available: null
+utils.deploy() called
+[Pipeline] echo
+utils.validate() called
+[Pipeline] echo
+Git helper value: dummy-git-helper
+[Pipeline] echo
+Deploy helper value: dummy-deploy
+[Pipeline] echo
+Validate helper value: dummy-validate
 [Pipeline] }
 [Pipeline] // script
 [Pipeline] }
